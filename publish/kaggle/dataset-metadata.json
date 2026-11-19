@@ -1,7 +1,7 @@
 {
-  "title": "Melbourne Parking Occupancy (half-hourly kerbside zones)",
+  "title": "Melbourne Parking Occupancy (half-hourly)",
   "id": "danilmatrosov/melbourne-parking-occupancy",
-  "subtitle": "536 kerbside zones, 30-minute granularity, the history Melbourne does not publish",
+  "subtitle": "536 kerbside zones, 30-minute grid, the history the city omits",
   "licenses": [
     {
       "name": "Attribution 4.0 International (CC BY 4.0)"
