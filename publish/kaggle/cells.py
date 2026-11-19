@@ -3,9 +3,28 @@ import pandas as pd, numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
-BASE = "/kaggle/input/melbourne-parking-occupancy"
-occ = pd.read_parquet(f"{BASE}/occupancy.parquet")
-zones = pd.read_parquet(f"{BASE}/parking_zones.parquet")
+import glob, os
+
+# Файлы ищутся рекурсивно, а не задаются путём. Kaggle монтирует подключённые
+# датасеты не всегда одинаково: бывает /kaggle/input/<slug>/, бывает глубже.
+# Заодно это работает и с клоном репозитория, где occupancy лежит помесячно.
+ROOTS = ["/kaggle/input", "data", "."]
+occ_files, zones_file = [], None
+for root in ROOTS:
+    if not os.path.isdir(root):
+        continue
+    occ_files = sorted(glob.glob(f"{root}/**/occupancy*.parquet", recursive=True))
+    found = sorted(glob.glob(f"{root}/**/parking_zones.parquet", recursive=True))
+    zones_file = found[0] if found else None
+    if occ_files and zones_file:
+        break
+if not (occ_files and zones_file):
+    listing = {r: sorted(os.listdir(r))[:10] for r in ROOTS if os.path.isdir(r)}
+    raise FileNotFoundError(f"данные не найдены; что лежит рядом: {listing}")
+
+print(f"найдено файлов занятости: {len(occ_files)}")
+occ = pd.concat((pd.read_parquet(f) for f in occ_files), ignore_index=True)
+zones = pd.read_parquet(zones_file)
 
 print(f"occupancy    : {len(occ):,} rows, {occ.time.min()} .. {occ.time.max()}")
 print(f"parking_zones: {len(zones)} zones, {int(zones.bays.sum()):,} bays")
