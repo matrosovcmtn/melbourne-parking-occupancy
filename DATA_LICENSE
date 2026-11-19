@@ -1,0 +1,86 @@
+Data License — Melbourne Parking Occupancy Dataset
+
+This repository is licensed in two parts:
+
+  * data   (the `data/` directory)        — CC BY 4.0, see ./LICENSE
+  * code   (scripts, examples)            — MIT,      see ./LICENSE-CODE
+
+The split is deliberate: MIT is a poor fit for data, and CC BY is a poor fit
+for code. GitHub shows only one licence per repository and detects ./LICENSE —
+that is the data licence, because the data is what this repository is for.
+
+This file adds the attribution requirements specific to this Dataset; the
+canonical CC BY 4.0 text lives in ./LICENSE.
+
+The data files in the `data/` directory of this repository (the "Dataset")
+are licensed to you under the
+
+    Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+Summary:   https://creativecommons.org/licenses/by/4.0/
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+================================================================================
+Source data and its licence
+================================================================================
+
+The occupancy values are derived from the City of Melbourne open dataset
+"On-street Parking Bay Sensors":
+
+    https://data.melbourne.vic.gov.au/explore/dataset/on-street-parking-bay-sensors/information/
+
+That dataset is published by data.melbourne.vic.gov.au under CC BY, with the
+licence URL given in the portal's own metadata as:
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+CC BY 4.0 permits redistribution and derivative works provided the source is
+credited, which is why this Dataset can exist and why it carries the same
+licence.
+
+================================================================================
+Attribution requirement
+================================================================================
+
+You are free to share and adapt the Dataset for any purpose, including
+commercial use, provided you give appropriate credit to BOTH the upstream
+source and this compilation:
+
+    "Melbourne Parking Occupancy Dataset, compiled by Danil Matrosov / ParkOut
+     (https://github.com/matrosovcmtn/melbourne-parking-occupancy), derived
+     from City of Melbourne 'On-street Parking Bay Sensors'
+     (https://data.melbourne.vic.gov.au), licensed under CC BY 4.0."
+
+================================================================================
+What this Dataset adds to the source
+================================================================================
+
+The City of Melbourne publishes the current status of each parking bay sensor
+and does not publish history. This Dataset is a derivative work: bay-level
+snapshots were polled on a 30-minute grid, aggregated into the city's own
+zones, and stored as a time series. Zone names, coordinates and bay counts
+come from the source unchanged.
+
+Independently verify the upstream terms before relying on this Dataset for
+commercial products, redistribution under a different licence, regulated
+industries, or large-scale republication: those terms may have been updated
+after this Dataset was produced.
+
+================================================================================
+What this Dataset does NOT cover
+================================================================================
+
+- Predictions: observed occupancy only. Forecasts produced by ParkOut's ML
+  service are not included and are not licensed under CC BY 4.0.
+- Code: scripts and examples are MIT — see ./LICENSE-CODE.
+- Trademarks: "ParkOut" and "City of Melbourne" are not licensed for use under
+  either licence. Do not use either name to imply endorsement of derived works.
+
+================================================================================
+No warranty
+================================================================================
+
+This Dataset is provided "as is", without warranty of any kind, express or
+implied. The compilers make no representations about the accuracy,
+completeness, or fitness for any particular purpose of the data. The City of
+Melbourne is not responsible for this compilation. Use at your own risk.

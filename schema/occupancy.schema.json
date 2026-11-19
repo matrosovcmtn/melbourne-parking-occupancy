@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Melbourne Parking Occupancy — occupancy_YYYY-MM.parquet",
+  "description": "One row per kerbside zone per 30-minute slot. Derived from City of Melbourne On-street Parking Bay Sensors (CC BY 4.0), which publishes current per-bay status only.",
+  "type": "object",
+  "required": [
+    "time",
+    "parking_id",
+    "free_spaces",
+    "occupancy_rate"
+  ],
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start of the half-hour slot, UTC. Rows collected before 2026-11-12 carry the moment of collection and drift a few seconds inside the slot; from 2026-11-12 the collector snaps to the grid. Floor to 30 minutes for an exact grid."
+    },
+    "parking_id": {
+      "type": "integer",
+      "description": "Zone key. Joins to parking_zones.id. Not the city's own number — that is parking_zones.zone_id."
+    },
+    "free_spaces": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Bays reported unoccupied in the zone at that moment. Exceeds parking_zones.bays in 696 rows (0.05%, 120 zones) because the bay count is today's value while the row is from the day it was collected."
+    },
+    "occupancy_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percent of the zone's bays occupied. Computed by the collector as the share of occupied sensors; the city does not publish a rate. Stays within 0-100 across all 1,413,875 rows. Exactly 0 in 17.5% of rows and exactly 100 in 9.7%: the median zone has 7 bays, so both ends are hit often."
+    }
+  }
+}

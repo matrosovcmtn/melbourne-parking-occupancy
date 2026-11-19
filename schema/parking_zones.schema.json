@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Melbourne Parking Occupancy — parking_zones.parquet",
+  "description": "Static metadata for the 536 zones, taken from the source feed unchanged except for the aggregation into zones.",
+  "type": "object",
+  "required": [
+    "id",
+    "zone_id",
+    "name",
+    "latitude",
+    "longitude",
+    "bays"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Join key for occupancy.parking_id."
+    },
+    "zone_id": {
+      "type": "integer",
+      "description": "The city's own zone number, as it appears in the source feed."
+    },
+    "name": {
+      "type": "string",
+      "description": "Street plus zone number, e.g. 'Argyle Place North, zone 7001'."
+    },
+    "street": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Street only. Empty for 9 zones the city leaves unnamed."
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Zone centre, averaged over the coordinates of its bays."
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Zone centre, averaged over the coordinates of its bays."
+    },
+    "bays": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Sensors in the zone. Range 1-81, median 7; 69 zones have one or two bays, where occupancy takes only a few discrete values."
+    },
+    "last_free_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "description": "Last slot in which the zone reported a free bay. Lets you rebuild feed_silent for any as-of date."
+    },
+    "feed_silent": {
+      "type": "boolean",
+      "description": "True for 16 zones that reported no free bay in the last 30 days. A looser criterion, zero variance over the whole period, catches 86 zones and 16% of rows."
+    }
+  }
+}

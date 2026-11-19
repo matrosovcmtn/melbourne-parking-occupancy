@@ -1,0 +1,28 @@
+{
+  "title": "Melbourne Parking Occupancy (half-hourly kerbside zones)",
+  "id": "danilmatrosov/melbourne-parking-occupancy",
+  "subtitle": "536 kerbside zones, 30-minute granularity, the history Melbourne does not publish",
+  "licenses": [
+    {
+      "name": "Attribution 4.0 International (CC BY 4.0)"
+    }
+  ],
+  "keywords": [
+    "transportation",
+    "urban planning",
+    "time series analysis",
+    "geospatial analysis",
+    "internet"
+  ],
+  "resources": [
+    {
+      "path": "parking_zones.parquet",
+      "description": "Static metadata for 536 kerbside zones: the city's own zone number, name, street, WGS-84 coordinates averaged over the zone's bays, bay count, plus last_free_at and feed_silent marking zones that stopped reporting free bays."
+    },
+    {
+      "path": "occupancy.parquet",
+      "description": "Occupancy every 30 minutes: time (UTC), parking_id joining to parking_zones.id, free_spaces (bays reported unoccupied), occupancy_rate (percent of the zone's bays occupied, 0-100 throughout). Derived from per-bay sensor status: the city publishes current state only and no history."
+    }
+  ],
+  "_comment": "Справочный файл: публикация идёт через publish/kaggle_upload.py, который этот json не читает для заливки. Описания файлов Kaggle принимает только из веб-интерфейса. Названия тегов проверены: эндпоинт /datasets/metadata отвергает cities и time series, одно недопустимое название отменяет весь запрос."
+}
