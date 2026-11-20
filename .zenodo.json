@@ -1,0 +1,45 @@
+{
+  "upload_type": "dataset",
+  "title": "Melbourne Parking Occupancy Dataset",
+  "creators": [
+    {
+      "name": "Matrosov, Danil",
+      "affiliation": "ParkOut"
+    }
+  ],
+  "description": "<p>1.41 million half-hourly occupancy observations for <strong>536 kerbside parking zones in Melbourne, Australia</strong>, from 18 September 2026.</p><p>The City of Melbourne publishes the current status of 6,324 in-ground parking bay sensors and keeps no history. Query the API twice and you get two snapshots; nothing tells you what the street looked like last Tuesday at 18:00. This dataset is that missing axis: a collector polls the city feed on a 30-minute grid and aggregates bays into the city's own zones.</p><p><strong>Files.</strong> <code>occupancy_YYYY-MM.parquet</code>, one row per zone per 30-minute slot (time in UTC, parking_id, free_spaces, occupancy_rate); <code>parking_zones.parquet</code>, metadata for 536 zones with the city's zone number, street, coordinates and bay count.</p><p><strong>Read before modelling:</strong> the median zone has 7 bays and 69 zones have one or two, so occupancy there takes only a few discrete values; 86 zones have zero variance over the whole period; no data exists between 2026-11-05 and 2026-11-12 because of a collector outage. All documented in the README.</p><p>Derived from City of Melbourne \"On-street Parking Bay Sensors\", licensed CC BY 4.0.</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "parking",
+    "urban mobility",
+    "smart city",
+    "occupancy",
+    "time series",
+    "open data",
+    "Melbourne",
+    "kerbside sensors"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/matrosovcmtn/melbourne-parking-occupancy",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://www.kaggle.com/datasets/danilmatrosov/melbourne-parking-occupancy",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://huggingface.co/datasets/matrosovdani/melbourne-parking-occupancy",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://data.melbourne.vic.gov.au/explore/dataset/on-street-parking-bay-sensors/information/",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Melbourne Parking Occupancy Dataset"
+abstract: >-
+  1.41 million half-hourly occupancy observations for 536 kerbside parking zones in Melbourne, Australia, from 18 September 2026. The City of Melbourne publishes the current status of 6,324 in-ground bay sensors and no history at all; this dataset is the missing time axis. Derived from City of Melbourne On-street Parking Bay Sensors, licensed CC BY 4.0.
+authors:
+  - family-names: Matrosov
+    given-names: Danil
+    affiliation: ParkOut
+license: CC-BY-4.0
+repository-code: "https://github.com/matrosovcmtn/melbourne-parking-occupancy"
+url: "https://github.com/matrosovcmtn/melbourne-parking-occupancy"
+keywords:
+  - parking
+  - urban mobility
+  - smart city
+  - occupancy
+  - time series
+  - open data
+  - Melbourne
+  - kerbside sensors
+date-released: 2026-11-20
+version: "2026-11-19"

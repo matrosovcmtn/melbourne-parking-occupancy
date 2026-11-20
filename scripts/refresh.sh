@@ -18,6 +18,11 @@ cd "$REPO_DIR"
 PY="${PYTHON:-$REPO_DIR/.venv/bin/python}"
 [ -x "$PY" ] || { echo "нет интерпретатора: $PY" >&2; exit 1; }
 
+# Без этого любой коммит, сделанный не на сервере, ломает выкатку: push уходит
+# в отказ, а крон узнаёт об этом только из журнала, которого никто не читает.
+echo "подтягиваю изменения..."
+git pull --rebase --quiet origin main
+
 echo "выгрузка из базы..."
 "$PY" scripts/export_from_db.py \
     --city melbourne --output-dir "$REPO_DIR/data-raw" --verbose
