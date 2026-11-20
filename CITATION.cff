@@ -9,6 +9,14 @@ authors:
     given-names: Danil
     affiliation: ParkOut
 license: CC-BY-4.0
+doi: "10.5281/zenodo.24405345"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24405345"
+    description: Concept DOI, always resolves to the newest version
+  - type: doi
+    value: "10.5281/zenodo.24405346"
+    description: Version DOI of the 2026-11-20 release
 repository-code: "https://github.com/matrosovcmtn/melbourne-parking-occupancy"
 url: "https://github.com/matrosovcmtn/melbourne-parking-occupancy"
 keywords:

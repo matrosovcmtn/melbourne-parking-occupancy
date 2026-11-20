@@ -105,13 +105,16 @@ than Gaussian.
 Source: **City of Melbourne**, On-street Parking Bay Sensors, licensed
 **CC BY 4.0**. This dataset carries the same licence.
 
-Cite both:
+Cite both this dataset and the city's feed:
 
 ```
-Melbourne Parking Occupancy (2026). Collected by ParkOut from City of
-Melbourne On-street Parking Bay Sensors (CC BY 4.0).
-https://github.com/matrosovcmtn/melbourne-parking-occupancy
+Matrosov, D. (2026). Melbourne Parking Occupancy Dataset [Data set]. Zenodo.
+https://doi.org/10.5281/zenodo.24405345
+Derived from City of Melbourne, On-street Parking Bay Sensors (CC BY 4.0).
 ```
+
+The DOI follows the newest version. For a reproducible snapshot cite the version
+DOI: 20 November 2026 is 10.5281/zenodo.24405346.
 
 ## Related
 

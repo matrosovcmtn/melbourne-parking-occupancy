@@ -4,3 +4,6 @@ data-raw/
 .publish-stage/
 __pycache__/
 *.pyc
+
+# id черновика Zenodo между сборкой и публикацией, живёт недолго
+.zenodo-draft

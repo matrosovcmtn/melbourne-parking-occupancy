@@ -4,6 +4,11 @@
 
 **1.41 million** half-hourly observations · **536 zones** covering 5,804 bays · 18 Sep – 19 Nov 2026 · 1.9 MB of Parquet
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24405345.svg)](https://doi.org/10.5281/zenodo.24405345)
+[![License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey.svg)](DATA_LICENSE)
+[![Kaggle](https://img.shields.io/badge/Kaggle-dataset-20BEFF.svg)](https://www.kaggle.com/datasets/danilmatrosov/melbourne-parking-occupancy)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-dataset-FFD21E.svg)](https://huggingface.co/datasets/matrosovdani/melbourne-parking-occupancy)
+
 ## Why this exists
 
 The City of Melbourne publishes the **current** status of 6,324 in-ground parking
@@ -131,12 +136,27 @@ licensed **CC BY 4.0**.
 This dataset: **CC BY 4.0** (`data/`), MIT for the code (`scripts/`). See
 [DATA_LICENSE](DATA_LICENSE) and [LICENSE-CODE](LICENSE-CODE).
 
-If you use it, cite both:
+If you use it, cite both this dataset and the city's feed it derives from:
 
 ```
-Melbourne Parking Occupancy (2026). Collected by ParkOut from City of Melbourne
-On-street Parking Bay Sensors (CC BY 4.0). https://github.com/matrosovcmtn/melbourne-parking-occupancy
+Matrosov, D. (2026). Melbourne Parking Occupancy Dataset [Data set]. Zenodo.
+https://doi.org/10.5281/zenodo.24405345
+Derived from City of Melbourne, On-street Parking Bay Sensors (CC BY 4.0).
 ```
+
+```bibtex
+@dataset{matrosov2026melbourneparking,
+  author    = {Matrosov, Danil},
+  title     = {Melbourne Parking Occupancy Dataset},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24405345},
+  url       = {https://doi.org/10.5281/zenodo.24405345}
+}
+```
+
+That DOI follows the newest version. For a reproducible snapshot cite the version
+DOI: the release of 20 November 2026 is [`10.5281/zenodo.24405346`](https://doi.org/10.5281/zenodo.24405346).
 
 ## Related
 
